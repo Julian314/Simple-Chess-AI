@@ -14,4 +14,4 @@ def create_connection(db_file):
     
     return conn
 
-create_connection("/home/arbeite/shess_bot/shess_dataset.db")
+create_connection("shess_dataset.db")
