@@ -5,7 +5,7 @@ from create_connection import create_connection
 from helpers import int_to_binary_10, int_to_binary_44, int_to_binary_6, int_to_binary_64, en_passant, get_stockfish_eval
 import time
 
-stockfish = Stockfish(path="/home/arbeite/stockfish/stockfish-ubuntu-x86-64-avx2", parameters={"Threads":4})
+stockfish = Stockfish(path="PATH TO STOCKFISH", parameters={"Threads":4})
 pgn = open('lichess_db_standard_rated_2013-04.pgn')
 
 common_openings = []
