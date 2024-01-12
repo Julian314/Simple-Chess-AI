@@ -4,7 +4,7 @@ from helpers import int_to_binary_10, int_to_binary_44, int_to_binary_6, int_to_
 import chess
 
 model5 = NeuralNetwork_corrected(769, [770,512,256,128,64,32,16,1])
-model5.load_state_dict(torch.load("ShessGPT_2(3).pth", map_location = torch.device('cpu')))
+model5.load_state_dict(torch.load("PATH TO MODEL", map_location = torch.device('cpu')))
 
 fen = "8/2p5/p7/P6p/2p4k/2P5/KP4b1/8 w - - 0 44"
 board = chess.Board(fen)
