@@ -6,16 +6,16 @@ import torch.nn as nn
 from helpers import int_to_binary_10, int_to_binary_44, int_to_binary_6, int_to_binary_64, en_passant, get_stockfish_eval, pawn, rook, bishop_knight, queen
 from NeuralNets import NeuralNetwork, NeuralNetwork_OG, NeuralNetwork_corrected
 
-stockfish = Stockfish(path="/home/arbeite/stockfish/stockfish-ubuntu-x86-64-avx2", parameters={"Threads":4})
+stockfish = Stockfish(path="PATH TO STOCKFISH", parameters={"Threads":4})
 pgn = open('lichess_db_standard_rated_2013-03.pgn')
 
 model4 = NeuralNetwork_OG()
 model5 = NeuralNetwork_corrected(769, [769,512,256,128,64,32,16,1])
 model6 = NeuralNetwork_corrected(769,[769,512,256,128,64,32,16,1])
 
-model4.load_state_dict(torch.load("chess_eval_model_jschopp_og.pth", map_location = torch.device('cpu')))
-model5.load_state_dict(torch.load("ShessGPT_1.pth", map_location = torch.device('cpu')))
-model6.load_state_dict(torch.load("ShessGPT_2(3).pth", map_location = torch.device('cpu')))
+model4.load_state_dict(torch.load("PATH TO MODEL", map_location = torch.device('cpu')))
+model5.load_state_dict(torch.load("PATH TO MODEL", map_location = torch.device('cpu')))
+model6.load_state_dict(torch.load("PATH TO MODEL", map_location = torch.device('cpu')))
 
 with open('evaluations.csv', 'w', newline = '') as csvfile:
     fieldnames = ['Stockfish', 'ShessGPT_1', 'ShessGPT_2', 'ShessGPT_3']
